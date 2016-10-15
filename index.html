@@ -8,10 +8,16 @@
         <link rel="stylesheet" href="lib/styles/main.min.css">
     </head>
     <body>
-      <nav>
+
+      <aside>
           <div class="col-3 col-m-2 flex-container">
+            <form class="search-form" autocomplete="off">
+              <input class="search-field" type="text" name="search-terms" placeholder="&#xf002;">
+              <button class="search-button" type="submit">Go!</button>
+            </form>
           </div>
-      </nav>
+      </aside
+
       <main>
         <!-- <div class="row"> -->
 
@@ -21,10 +27,14 @@
 
       <script id="gif" type="text/x-handlebars-template">
         <div class="gif-container flex-item">
-          <i class="fa fa-times-circle" aria-hidden="true"></i>
+          <a class="delete_button"><i class="fa fa-times" aria-hidden="true"></i></a>
           <img src="{{gif_url}}">
         </div>
       </script>
+
+
+
         <script src="lib/js/main.min.js"></script>
+
     </body>
 </html>
