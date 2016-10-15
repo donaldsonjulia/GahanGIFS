@@ -91,8 +91,9 @@ $('.content').on('click', '.delete_button', function(event) {
 */
 $('.search-form').on('click', '.search-button', function(event) {
   event.preventDefault();
-  var searchString = this.value;
-  console.log('in');
+  var searchString = $('.search-field').val();
+  console.log(searchString + " is what you searched");
+  searchGIF(searchString);
   });
 
 
