@@ -9,15 +9,22 @@
     </head>
     <body>
       <nav>
-        <div class="row">
-          <div class="col-3 col-m-2"></div>
-          <div class="col-9 col-m-10 content"></div>
-        </div>
+          <div class="col-3 col-m-2 flex-container">
+          </div>
       </nav>
-      <aside></aside>
       <main>
-        <!-- <div class="content"></div> -->
+        <!-- <div class="row"> -->
+
+          <div class="col-9 col-m-10 content flex-container"></div>
+        <!-- </div> -->
       </main>
+
+      <script id="gif" type="text/x-handlebars-template">
+        <div class="gif-container flex-item">
+          <i class="fa fa-times-circle" aria-hidden="true"></i>
+          <img src="{{gif_url}}">
+        </div>
+      </script>
         <script src="lib/js/main.min.js"></script>
     </body>
 </html>
