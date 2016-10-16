@@ -2,7 +2,8 @@
 
 var lastQuery = null;
 var alreadySeen = 0;
-var resultsLimit = 10;
+var resultsLimit = null;
+var gifContentPageCreated = false;
 
 /**
  *
@@ -37,7 +38,7 @@ function searchGIF(queryString, alreadySeen) {
         var imageSize = 'fixed_height_small';
 
         for (var index in gifArray) {
-            createTemplate(createGifContext(gifArray[index], imageSize));
+            createGifTemplate(createGifContext(gifArray[index], imageSize));
         }
     }).fail(function(error) {
         console.log('MAJOR BUMMER: ' + error);
@@ -79,12 +80,29 @@ function createGifContext(gifData, imageSize) {
  *@param {object} gifContext - the context object for an individual gif that includes image URL
  *
  */
-function createTemplate(gifContext) {
+function createGifTemplate(gifContext) {
     var source = $('#gif').html();
     var template = Handlebars.compile(source);
     var context = gifContext;
     var html = template(context);
-    $(html).fadeIn('slow').appendTo('.content');
+    $(html).fadeIn('slow').prependTo('.content');
+}
+
+/**
+ *
+ *Creates html elements for each page using Handlebars template
+ * @function createTemplate
+ * @param {string} pageSource - the script id for desired page template
+ * @param {object} pageContext - the context object for page template, created separately depending on page script id
+ *
+ */
+
+function createPage(pageSource, pageContext) {
+    var source = $(pageSource).html();
+    var template = Handlebars.compile(source);
+    var context = pageContext;
+    var html = template(context);
+    $(html).slideDown('slow').appendTo('main');
 }
 
 /**
@@ -92,11 +110,9 @@ function createTemplate(gifContext) {
  * @event Removes an individual image from content container when user clicks delete button
  *
  */
-$('.content').on('click', '.delete_button', function(event) {
-    $(this).parents('.gif-container').fadeOut(function() {
-        this.remove();
+$('main').on('click', '.delete_button', function(event) {
+    $(this).parents('.gif-container').remove();
     });
-});
 
 /**
  *
@@ -115,6 +131,11 @@ $('.search-form').on('click', '.search-button', function(event) {
         alreadySeen = 0;
     }
 
+    if (gifContentPageCreated === false) {
+    createPage('#gifContentPage', 'testing testing');
+    gifContentPageCreated = true;
+  }
+    resultsLimit = 4;
     searchGIF(searchString, alreadySeen);
 
     alreadySeen += resultsLimit;
@@ -143,6 +164,7 @@ $('.more-options').on('click', '.clear-button', function(event) {
  */
 
 $('.more-options').on('click', '.more-button', function(event) {
+    resultsLimit = 2;
     searchGIF(lastQuery, alreadySeen);
     alreadySeen += resultsLimit;
     console.log(alreadySeen + " gifs have already been seen for query: " + "'" + lastQuery + "'");
