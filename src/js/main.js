@@ -1,6 +1,7 @@
 // JULIA PROJECT
 
 var alreadySeen = 0;
+var lastQuery = null;
 
 
 /**
@@ -13,6 +14,7 @@ var alreadySeen = 0;
 
 function searchGIF(queryString, alreadySeen) {
     var query = encodeURI(queryString);
+    lastQuery = query;
     var resultsLimit = 10;
 
     var searchURL = 'http://api.giphy.com/v1/gifs/search?q=' + query + '&limit=' + resultsLimit + '&offset=' + alreadySeen + '&api_key=dc6zaTOxFJmzC';
@@ -28,12 +30,12 @@ function searchGIF(queryString, alreadySeen) {
         var gifArray = dataObj.data;
         console.log(gifArray);
 
-        var imageSize = 'fixed_height_downsampled';
-
-        console.log(gifArray);
+        var imageSize = 'fixed_height_small';
 
         for (var index in gifArray) {
 
+            alreadySeen += 1;
+            console.log(alreadySeen);
             createTemplate(createGifContext(gifArray[index], imageSize));
 
         }
@@ -78,11 +80,11 @@ function createTemplate(gifContext) {
     var template = Handlebars.compile(source);
     var context = gifContext;
     var html = template(context);
-    $(html).fadeIn('slow').prependTo('.content');
+    $(html).fadeIn('slow').appendTo('.content');
 }
 
 /**
- * Removes an individual image from content container when user clicks delete button
+ * @event Removes an individual image from content container when user clicks delete button
  */
 $('.content').on('click', '.delete_button', function(event) {
     $(this).parents('.gif-container').fadeOut(function() {
@@ -91,11 +93,25 @@ $('.content').on('click', '.delete_button', function(event) {
 });
 
 /**
- * Initiates @function searchGIF upon search form submit
+ * @event Initiates @function searchGIF upon search form submit
  */
 $('.search-form').on('click', '.search-button', function(event) {
     event.preventDefault();
     var searchString = $('.search-field').val();
     $('.search-field').val('');
     searchGIF(searchString, alreadySeen);
+});
+
+/**
+* @event Clears page content
+*/
+$('.more-options').on('click', '.clear-button', function(event) {
+  $('.gif-container').remove();
+});
+
+/**
+* @event Initiates @function searchGIF using the previous search query
+*/
+$('.more-options').on('click', '.more-button', function(event) {
+  searchGIF(lastQuery, alreadySeen);
 });

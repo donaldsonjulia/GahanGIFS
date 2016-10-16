@@ -1,14 +1,15 @@
 aside {
   div {
-    height: 25vh;
+    // height: 15vh;
     background: white;
-    text-align: right;
+
      div.flex-container {
          display: flex;
          align-content: flex-end;
          justify-content: center;
          flex-direction: column;
          flex-wrap: nowrap;
+         text-align: right;
      }
   }
 }
