@@ -36,6 +36,10 @@ function searchGIF(queryString, alreadySeen) {
         moreButtonExists = true;
       }
 
+      if (moreButtonExists === true) {
+        $(".more-button").html("MORE " + lastQuery.toUpperCase());
+      }
+
         var gifArray = dataObj.data;
         console.log(gifArray);
 
@@ -160,6 +164,7 @@ $('.search-form').on('click', '.search-button', function(event) {
 
     alreadySeen += resultsLimit;
 
+
 });
 
 /**
@@ -169,6 +174,7 @@ $('.search-form').on('click', '.search-button', function(event) {
  */
 $('.search-form').on('click', '.clear-button', function(event) {
     $('.gif-container').remove();
+    $('.more-button-container').remove();
     alreadySeen = 0;
     lastQuery = null;
     moreButtonExists = false;
