@@ -16,8 +16,8 @@ var resultsLimit = 10;
 
 function searchGIF(queryString, alreadySeen) {
 
+    lastQuery = queryString;
     var query = encodeURI(queryString);
-    lastQuery = query;
 
 
     var searchURL = 'http://api.giphy.com/v1/gifs/search?q=' + query + '&limit=' + resultsLimit + '&offset=' + alreadySeen + '&api_key=dc6zaTOxFJmzC';
@@ -145,5 +145,5 @@ $('.more-options').on('click', '.clear-button', function(event) {
 $('.more-options').on('click', '.more-button', function(event) {
     searchGIF(lastQuery, alreadySeen);
     alreadySeen += resultsLimit;
-    console.log(alreadySeen + " gifs have already been seen for query: " + lastQuery);
+    console.log(alreadySeen + " gifs have already been seen for query: " + "'" + lastQuery + "'");
 });
