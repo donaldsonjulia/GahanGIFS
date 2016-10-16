@@ -1,40 +1,43 @@
-
-
 <!DOCTYPE html>
+
 <html lang='en'>
-    <head>
-        <title>GIF COLLAGE</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="lib/styles/main.min.css">
-    </head>
-    <body>
 
-      <aside>
-          <div class="col-3 col-m-2 flex-container">
-            <form class="search-form" autocomplete="off">
-              <input class="search-field" type="text" name="search-terms" placeholder="&#xf002;">
-              <button class="search-button" type="submit">Go!</button>
-            </form>
-          </div>
-      </aside
+<head>
+    <title>GIF COLLAGE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/styles/main.min.css">
+</head>
 
-      <main>
-        <!-- <div class="row"> -->
+<body>
 
-          <div class="col-9 col-m-10 content flex-container"></div>
-        <!-- </div> -->
-      </main>
-
-      <script id="gif" type="text/x-handlebars-template">
-        <div class="gif-container flex-item">
-          <a class="delete_button"><i class="fa fa-times" aria-hidden="true"></i></a>
-          <img src="{{gif_url}}">
+    <aside>
+        <div class="row">
+            <div class="col-12 col-m-12 flex-container">
+                <form class="search-form" autocomplete="off">
+                    <input class="search-field" type="text" name="search-terms" placeholder="">
+                    <button class="search-button paper-raise" type="submit">SEARCH</button>
+                </form>
+            </div>
         </div>
-      </script>
+    </aside <main>
+    <div class="row">
+        <!-- <div class="col-1 col-m-1"></div> -->
+        <div class="col-12 col-m-12 content flex-container"></div>
+        <!-- <div class="col-1 col-m-1"></div> -->
+    </div>
+    </main>
+
+    <script id="gif" type="text/x-handlebars-template">
+        <div class="gif-container flex-item">
+            <a class="delete_button"><i class="fa fa-times" aria-hidden="true"></i></a>
+            <img src="{{gif_url}}">
+        </div>
+    </script>
 
 
 
-        <script src="lib/js/main.min.js"></script>
+    <script src="lib/js/main.min.js"></script>
 
-    </body>
+</body>
+
 </html>

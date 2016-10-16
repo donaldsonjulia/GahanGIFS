@@ -12,8 +12,9 @@
   position: relative;
   display: flex;
   border-radius: 10px;
-  margin: 2px;
+  margin: 5px;
   background: $pale-aqua;
+  transition: ease;
 
   img {
     border-radius: 8px 40px 8px 8px;

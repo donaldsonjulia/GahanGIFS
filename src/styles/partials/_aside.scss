@@ -1,3 +1,44 @@
+aside {
+  div {
+    height: 25vh;
+    background: white;
+    text-align: right;
+     div.flex-container {
+         display: flex;
+         align-content: flex-end;
+         justify-content: center;
+         flex-direction: column;
+         flex-wrap: nowrap;
+     }
+  }
+}
+
 input {
-  font-family: sans-serif, FontAwesome;
+  outline: none;
+  margin-right: 5px;
+  padding: 8px;
+  width: 30%;
+  min-width: 100px;
+  // font-family: sans-serif, FontAwesome;
+}
+
+button {
+  outline: none;
+  width: 100px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+  color: $pale-aqua;
+  font-size: 12px;
+  letter-spacing: 1px;
+  background-color: white;
+  border: 2px solid $pale-aqua;
+    &:hover {
+      color: white;
+      background: $pale-aqua;
+    }
+    &:active {
+      position: relative;
+      top: 1px;
+    }
 }
