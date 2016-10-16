@@ -9,33 +9,31 @@
 </head>
 
 <body>
+<nav>
+  <div class="navBar col-12 col-m-12">
+    <ul>
+      <li>HOME</li>
+      <li>SEARCH</li>
+      <li>TRENDING</li>
+    </ul>
+  </div>
+</nav>
 
     <aside>
-        <div class="aside row 1">
-            <div class="col-12 col-m-12 flex-container search-form">
+            <div class="col-12 col-m-12 search-form flex-container">
                 <form autocomplete="off">
                     <input class="search-field" type="text" name="search-terms" placeholder="">
                     <button class="search-button" type="submit">SEARCH</button>
                 </form>
                 <button class="clear-button" type="submit">CLEAR</button>
             </div>
-            </div>
-          <!-- <div class="aside row 2">
-            <div class="col-12 col-m-12 more-options">
-            <button class="more-button" type="submit">MORE</button>
-          </div>
-          </div> -->
     </aside>
 
     <main>
-
-
     </main>
 
     <script id="gifContentPage" type="text/x-handlebars-template">
           <div class="col-12 col-m-12 content flex-container"></div>
-
-
     </script>
 
     <script id="gif" type="text/x-handlebars-template">
@@ -46,7 +44,7 @@
     </script>
 
     <script id="more-gifs" type="text/x-handlebars-template">
-      <div class="more-button-container">
+      <div class="more-button-container col-12 col-m-12">
         <button class="more-button" type="submit">{{button_text}}</button>
       </div>
     </script>

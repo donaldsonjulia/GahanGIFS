@@ -1,0 +1,13 @@
+
+div.navBar {
+  background: $pale-aqua;
+ul {
+  list-style: none;
+  position: relative;
+  display: flex;
+  li {
+    float: left;
+    margin: 0 5px;
+  }
+}
+}

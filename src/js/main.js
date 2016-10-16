@@ -169,7 +169,7 @@ $('.search-form').on('click', '.search-button', function(event) {
 
 /**
  *
- * @event Clears page content
+ * @event Clears all page content except navigation aside
  *  and resets variables alreadySeen and lastQuery and moreButtonExists
  */
 $('.search-form').on('click', '.clear-button', function(event) {
