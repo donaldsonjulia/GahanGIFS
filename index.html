@@ -11,37 +11,31 @@
 <body>
 
     <aside>
-        <div class="row">
+        <div class="aside row 1">
             <div class="col-12 col-m-12 flex-container search-form">
                 <form autocomplete="off">
                     <input class="search-field" type="text" name="search-terms" placeholder="">
                     <button class="search-button" type="submit">SEARCH</button>
                 </form>
+                <button class="clear-button" type="submit">CLEAR</button>
             </div>
-          <div class="row">
+            </div>
+          <!-- <div class="aside row 2">
             <div class="col-12 col-m-12 more-options">
-            <button class="clear-button" type="submit">CLEAR</button>
             <button class="more-button" type="submit">MORE</button>
           </div>
-          </div>
-        </div>
+          </div> -->
     </aside>
 
     <main>
 
-      <!-- <div class="row">
-          <div class="col-12 col-m-12 content flex-container"></div>
-      </div> -->
 
     </main>
 
     <script id="gifContentPage" type="text/x-handlebars-template">
-      <div class="row 1">
           <div class="col-12 col-m-12 content flex-container"></div>
-      </div>
-      <div class="row 2">
-        <p>{{test}}</p>
-      </div>
+
+
     </script>
 
     <script id="gif" type="text/x-handlebars-template">
@@ -51,10 +45,16 @@
         </div>
     </script>
 
+    <script id="more-gifs" type="text/x-handlebars-template">
+      <div class="more-button-container">
+        <button class="more-button" type="submit">{{button_text}}</button>
+      </div>
+    </script>
+
     <script id="landing" type="text/x-handlebars-template">
-      <div class="row 1">
-        <p>LANDING PAGE TEST</p>
-      </row>
+        <div class="col-12 col-m-12 landing-container">
+        <button class="start-button" type="submit">GET STARTED</button>
+      </div>
     </script>
 
 

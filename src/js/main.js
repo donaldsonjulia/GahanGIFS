@@ -4,6 +4,7 @@ var lastQuery = null;
 var alreadySeen = 0;
 var resultsLimit = null;
 var gifContentPageCreated = false;
+var moreButtonExists = false;
 
 /**
  *
@@ -14,7 +15,6 @@ var gifContentPageCreated = false;
  * @param {number} alreadySeen - current count of search results that have already been displayed
  *
  */
-
 function searchGIF(queryString, alreadySeen) {
 
     lastQuery = queryString;
@@ -31,6 +31,10 @@ function searchGIF(queryString, alreadySeen) {
     searchAjax.then(function(dataObj) {
         console.log(dataObj);
 
+      if (moreButtonExists === false) {
+        createMoreButtonTemplate();
+        moreButtonExists = true;
+      }
 
         var gifArray = dataObj.data;
         console.log(gifArray);
@@ -44,7 +48,6 @@ function searchGIF(queryString, alreadySeen) {
         console.log('MAJOR BUMMER: ' + error);
     });
 }
-
 
 /**
  *
@@ -65,7 +68,6 @@ function searchGIF(queryString, alreadySeen) {
  * @returns {object} gifContext
  *
  */
-
 function createGifContext(gifData, imageSize) {
     return {
         gif_url: gifData.images[imageSize].url
@@ -88,6 +90,26 @@ function createGifTemplate(gifContext) {
     $(html).fadeIn('slow').prependTo('.content');
 }
 
+
+/**
+ *
+ *Creates button that allows user to load more results of previous query
+ *@function createMoreButtonTemplate
+ *@param {object} buttonContext - the context object for the button's text
+ *
+ */
+function createMoreButtonTemplate() {
+  var buttonContext = {
+    button_text: 'GET MORE ' + lastQuery.toUpperCase()
+  };
+  var source = $('#more-gifs').html();
+  var template = Handlebars.compile(source);
+  var context  = buttonContext;
+  var html = template(context);
+  $(html).fadeIn('slow').prependTo('main')
+;}
+
+
 /**
  *
  *Creates html elements for each page using Handlebars template
@@ -96,19 +118,17 @@ function createGifTemplate(gifContext) {
  * @param {object} pageContext - the context object for page template, created separately depending on page script id
  *
  */
-
 function createPage(pageSource, pageContext) {
     var source = $(pageSource).html();
     var template = Handlebars.compile(source);
     var context = pageContext;
     var html = template(context);
-    $(html).slideDown('slow').appendTo('main');
+    $(html).slideDown('slow', function() {$(this).appendTo('main');});
 }
 
 /**
  *
  * @event Removes an individual image from content container when user clicks delete button
- *
  */
 $('main').on('click', '.delete_button', function(event) {
     $(this).parents('.gif-container').remove();
@@ -119,13 +139,13 @@ $('main').on('click', '.delete_button', function(event) {
  * @event Initiates @function searchGIF upon search form submit
  * @param {string} searchString is the current value of the search field input
  * @param {number} alreadySeen is set back to 0 each time a new search is initiated
- *
  */
-
 $('.search-form').on('click', '.search-button', function(event) {
     event.preventDefault();
     var searchString = $('.search-field').val();
     $('.search-field').val('');
+
+    $('.landing-container').remove(); //<----in case for any reason this happens before the landing pages clears
 
     if (alreadySeen > 0) {
         alreadySeen = 0;
@@ -144,14 +164,14 @@ $('.search-form').on('click', '.search-button', function(event) {
 
 /**
  *
- * @event Clears page content and resets variables alreadySeen and lastQuery
- *
+ * @event Clears page content
+ *  and resets variables alreadySeen and lastQuery and moreButtonExists
  */
-
-$('.more-options').on('click', '.clear-button', function(event) {
+$('.search-form').on('click', '.clear-button', function(event) {
     $('.gif-container').remove();
     alreadySeen = 0;
     lastQuery = null;
+    moreButtonExists = false;
 });
 
 
@@ -160,12 +180,31 @@ $('.more-options').on('click', '.clear-button', function(event) {
  * @event Initiates @function searchGIF using the previous query and current value of var alreadySeen to determine desired offset for new results
  * @param {string} lastQuery - the most recent search query submitted
  * @param {number} alreadySeen - the running count of how many results have already been returned for a given search
- *
  */
-
-$('.more-options').on('click', '.more-button', function(event) {
+$('main').on('click', '.more-button', function(event) {
     resultsLimit = 2;
     searchGIF(lastQuery, alreadySeen);
     alreadySeen += resultsLimit;
     console.log(alreadySeen + " gifs have already been seen for query: " + "'" + lastQuery + "'");
+});
+
+
+/**
+*
+* @event Auto generates landing page upon document load into window
+*/
+$(window).on('load', function(event) {
+  pageContext = {};
+  createPage('#landing', pageContext);
+});
+
+
+/**
+*
+* @event Loads content page to enable search results to populate
+*/
+$('main').on('click', '.start-button', function(event) {
+  $('.landing-container').remove();
+  createPage('#gifContentPage', 'testing testing');
+  gifContentPageCreated = true;
 });

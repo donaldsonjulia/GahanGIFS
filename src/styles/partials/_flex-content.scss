@@ -8,6 +8,15 @@
   flex-wrap: wrap;
 }
 
+.more-options {
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+}
+
 .flex-item {
   position: relative;
   display: flex;

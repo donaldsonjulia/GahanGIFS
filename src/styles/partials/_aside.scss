@@ -1,31 +1,33 @@
 aside {
   div {
-    // height: 15vh;
+
     background: white;
 
      div.flex-container {
          display: flex;
-         align-content: flex-end;
-         justify-content: center;
-         flex-direction: column;
-         flex-wrap: nowrap;
+         align-content: center;
+         justify-content: flex-end;
          text-align: right;
+        //  flex-wrap: nowrap;
      }
   }
 }
 
+aside {
 input {
   outline: none;
   margin-right: 5px;
   padding: 8px;
-  width: 30%;
+  // width: 50%;
   min-width: 100px;
+  border: 1px solid $pale-aqua;
   // font-family: sans-serif, FontAwesome;
 }
 
 button {
   outline: none;
   width: 100px;
+  height: 40px;
   margin: 5px;
   padding: 10px;
   border-radius: 20px;
@@ -42,4 +44,8 @@ button {
       position: relative;
       top: 1px;
     }
+}
+button.more-button {
+  width: 150px;
+}
 }
