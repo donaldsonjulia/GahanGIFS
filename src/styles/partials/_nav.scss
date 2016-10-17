@@ -1,13 +1,39 @@
+nav {
+  a {
+    text-decoration: none;
+    color: white;
+
+     &:hover {
+       color: white;
+     }
+  }
+}
+
 
 div.navBar {
   background: $pale-aqua;
 ul {
+  font-family: sans-serif, FontAwesome;
   list-style: none;
   position: relative;
   display: flex;
+  padding: 6px;
   li {
     float: left;
     margin: 0 5px;
   }
+  li.searchIcon {
+    position: absolute;
+    right: 5px;
+  }
 }
+}
+
+
+div.navMenu {
+  z-index: 1;
+  border-radius: 0px 0px 30px 30px;
+  background-color: $pale-aqua;
+  display: none;
+  text-align: center;
 }

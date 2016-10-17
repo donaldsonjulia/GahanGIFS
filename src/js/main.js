@@ -172,7 +172,7 @@ $('.search-form').on('click', '.search-button', function(event) {
  * @event Clears all page content except navigation aside
  *  and resets variables alreadySeen and lastQuery and moreButtonExists
  */
-$('.search-form').on('click', '.clear-button', function(event) {
+$('main').on('click', '.clear-button', function(event) {
     $('.gif-container').remove();
     $('.more-button-container').remove();
     alreadySeen = 0;
@@ -211,6 +211,25 @@ $(window).on('load', function(event) {
 */
 $('main').on('click', '.start-button', function(event) {
   $('.landing-container').remove();
+  $('.search-form').slideToggle();
   createPage('#gifContentPage', 'testing testing');
   gifContentPageCreated = true;
+});
+
+/**
+*
+* @event Toggles search bar up and down with click of search icon
+*/
+$('nav').on('click', '.searchIcon', function(event) {
+  $('.navMenu').slideToggle('fast');
+  $('.search-form').slideToggle();
+});
+
+/**
+*
+* @event Toggles search bar up and down with click of search icon
+*/
+$('nav').on('click', '.navIcon', function(event) {
+  $('.searchForm').slideToggle('fast');
+  $('.navMenu').slideToggle();
 });

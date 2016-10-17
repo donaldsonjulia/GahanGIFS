@@ -12,12 +12,19 @@
 <nav>
   <div class="navBar col-12 col-m-12">
     <ul>
-      <li>HOME</li>
-      <li>SEARCH</li>
-      <li>TRENDING</li>
+      <li class="navIcon"><a href="#">&#xf0c9;</a></li>
+      <li class="searchIcon"><a href="#">&#xf002;</a></li>
+    </ul>
+  </div>
+  <div class="navMenu col-5 col-m-4">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">TRENDING</a></li>
+      <li><a href="#">ABOUT</a></li>
     </ul>
   </div>
 </nav>
+
 
     <aside>
             <div class="col-12 col-m-12 search-form flex-container">
@@ -25,7 +32,6 @@
                     <input class="search-field" type="text" name="search-terms" placeholder="">
                     <button class="search-button" type="submit">SEARCH</button>
                 </form>
-                <button class="clear-button" type="submit">CLEAR</button>
             </div>
     </aside>
 
@@ -46,6 +52,7 @@
     <script id="more-gifs" type="text/x-handlebars-template">
       <div class="more-button-container col-12 col-m-12">
         <button class="more-button" type="submit">{{button_text}}</button>
+        <button class="clear-button" type="submit">CLEAR</button>
       </div>
     </script>
 
