@@ -221,7 +221,7 @@ $('main').on('click', '.start-button', function(event) {
 * @event Toggles search bar up and down with click of search icon
 */
 $('nav').on('click', '.searchIcon', function(event) {
-  $('.navMenu').slideToggle('fast');
+
   $('.search-form').slideToggle();
 });
 
@@ -230,6 +230,5 @@ $('nav').on('click', '.searchIcon', function(event) {
 * @event Toggles search bar up and down with click of search icon
 */
 $('nav').on('click', '.navIcon', function(event) {
-  $('.searchForm').slideToggle('fast');
   $('.navMenu').slideToggle();
 });
