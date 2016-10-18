@@ -1,7 +1,10 @@
 
 * {
   box-sizing: border-box;
-  transition: ease;
+}
+
+main {
+  background-image: url(../images/cork_1.png);
 }
 
 
@@ -11,7 +14,7 @@
     width: 100%;
     float: left;
     padding: 4px;
-    border: 1px solid red;
+    // border: 1px solid red; /* <------ to better see layout bug issues */
 }
 
 .row::after {

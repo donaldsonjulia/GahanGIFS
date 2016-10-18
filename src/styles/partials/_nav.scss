@@ -1,39 +1,26 @@
+
+
+
+
+
 nav {
-  a {
-    text-decoration: none;
-    color: white;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 2;
 
-     &:hover {
-       color: white;
-     }
-  }
-}
-
-
-div.navBar {
-  background: $pale-aqua;
-ul {
-  font-family: sans-serif, FontAwesome;
-  list-style: none;
-  position: relative;
-  display: flex;
-  padding: 6px;
-  li {
-    float: left;
-    margin: 0 5px;
-  }
-  li.searchIcon {
-    position: absolute;
-    right: 5px;
-  }
-}
-}
-
+    font-family: sans-serif, FontAwesome;
 
 div.navMenu {
-  z-index: 1;
-  border-radius: 0px 0px 30px 30px;
-  background-color: $pale-aqua;
-  display: none;
+
+background-color: $pale-aqua;
   text-align: center;
+      div.navDiv {
+        display: none;
+      }
+  }
+
+  div.navIcon {
+    background-color: $pale-aqua;
+  }
 }

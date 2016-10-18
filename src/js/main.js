@@ -94,7 +94,6 @@ function createGifTemplate(gifContext) {
     $(html).fadeIn('slow').prependTo('.content');
 }
 
-
 /**
  *
  *Creates button that allows user to load more results of previous query
@@ -113,7 +112,6 @@ function createMoreButtonTemplate() {
   $(html).fadeIn('slow').prependTo('main')
 ;}
 
-
 /**
  *
  *Creates html elements for each page using Handlebars template
@@ -129,6 +127,13 @@ function createPage(pageSource, pageContext) {
     var html = template(context);
     $(html).slideDown('slow', function() {$(this).appendTo('main');});
 }
+
+
+
+
+/*****************************************/
+/************ EVENT LISTENERS ************/
+
 
 /**
  *
@@ -220,7 +225,7 @@ $('main').on('click', '.start-button', function(event) {
 *
 * @event Toggles search bar up and down with click of search icon
 */
-$('nav').on('click', '.searchIcon', function(event) {
+$('aside').on('click', '.searchIcon', function(event) {
 
   $('.search-form').slideToggle();
 });
@@ -230,5 +235,5 @@ $('nav').on('click', '.searchIcon', function(event) {
 * @event Toggles search bar up and down with click of search icon
 */
 $('nav').on('click', '.navIcon', function(event) {
-  $('.navMenu').slideToggle();
+  $('.navDiv').slideToggle();
 });

@@ -9,37 +9,39 @@
 </head>
 
 <body>
-<nav>
-  <div class="navBar col-12 col-m-12">
-    <ul>
-      <li class="navIcon"><a href="#">&#xf0c9;</a></li>
-      <li class="searchIcon"><a href="#">&#xf002;</a></li>
-    </ul>
-  </div>
-  <div class="navMenu col-5 col-m-4">
-    <ul>
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">TRENDING</a></li>
-      <li><a href="#">ABOUT</a></li>
-    </ul>
-  </div>
-</nav>
+    <nav>
+        <div class="navMenu col-12 col-m-12">
+            <!-- <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">TRENDING</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul> -->
+            <div class="navDiv home"><a href="#">HOME</a></div>
+<div class="navDiv trending"><a href="#">TRENDING</a></div>
+<div class="navDiv about"><a href="#">ABOUT</a></div>
+
+
+        </div>
+<div class="navIcon col-12 col-m-12"><a href="#">&#xf0c9;</a></div>
+
+    </nav>
 
 
     <aside>
-            <div class="col-12 col-m-12 search-form flex-container">
-                <form autocomplete="off">
-                    <input class="search-field" type="text" name="search-terms" placeholder="">
-                    <button class="search-button" type="submit">SEARCH</button>
-                </form>
-            </div>
+        <div class="col-12 col-m-12 search-form flex-container">
+            <form autocomplete="off">
+                <input class="search-field" type="text" name="search-terms" placeholder="">
+                <button class="search-button" type="submit">SEARCH</button>
+            </form>
+        </div>
+        <div class="searchIcon"><a href="#">&#xf002;</a></div>
     </aside>
 
     <main>
     </main>
 
     <script id="gifContentPage" type="text/x-handlebars-template">
-          <div class="col-12 col-m-12 content flex-container"></div>
+        <div class="col-12 col-m-12 content flex-container"></div>
     </script>
 
     <script id="gif" type="text/x-handlebars-template">
@@ -50,21 +52,39 @@
     </script>
 
     <script id="more-gifs" type="text/x-handlebars-template">
-      <div class="more-button-container col-12 col-m-12">
-        <button class="more-button" type="submit">{{button_text}}</button>
-        <button class="clear-button" type="submit">CLEAR</button>
-      </div>
+        <div class="more-button-container col-12 col-m-12">
+            <button class="more-button" type="submit">{{button_text}}</button>
+            <button class="clear-button" type="submit">CLEAR</button>
+        </div>
     </script>
 
     <script id="landing" type="text/x-handlebars-template">
         <div class="col-12 col-m-12 landing-container">
-        <button class="start-button" type="submit">GET STARTED</button>
-      </div>
+            <button class="start-button" type="submit">GET STARTED</button>
+        </div>
+    </script>
+
+    <script id="about" type="text/x-handlebars-template">
+        <div class="about row 1">
+            <div class="col-8 col-m-9">
+                <p>Nowhere is it disputed that a friction of the methane is assumed to be a valiant bandana. The neons could be said to resemble clayey modems. Those milks are nothing more than grouses. What we don't know for sure is whether or not an uppish
+                    oyster without hardcovers is truly a bit of gory hots. Framed in a different way, we can assume that any instance of a lute can be construed as an inlaid industry. A textless japan's desk comes with it the thought that the netted broker
+                    is a violin. A hub is the wholesaler of a yellow. Authors often misinterpret the moat as a thumping planet, when in actuality it feels more like a leady chance.</p>
+
+                <p>Some assert that those virgos are nothing more than beetles. This is not to discredit the idea that a zoology is a basement's boundary. A gosling is a copper's baritone. Some assert that those exhausts are nothing more than forecasts.
+                    The prescribed viola reveals itself as a baleful fang to those who look. The lily is a closet. A father-in-law of the china is assumed to be a gamy example. The customer is a tuba.</p>
+            </div>
+            <div class="col-4 col-m-3">
+                <p>Some Filler Info About Us</p>
+            </div>
+        </div>
     </script>
 
 
 
-    <script src="lib/js/main.min.js"></script>
+    <script src="lib/js/vendor.min.js"></script>
+    <script src="lib/js/main.js"></script>
+</body>
 
 </body>
 

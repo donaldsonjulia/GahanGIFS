@@ -1,15 +1,9 @@
 
-    //
-    // div.flex-container {
-    //      display: flex;
-    //      align-content: center;
-    //      justify-content: flex-end;
-    //      text-align: right;
-    //      align-items: center;
-    //
-    //     //  flex-wrap: nowrap;
-    //  }
 
+
+aside {
+
+  font-family: sans-serif, FontAwesome;
 
 
   div.search-form {
@@ -57,4 +51,6 @@ button.search-button {
       top: 1px;
       letter-spacing: 2px;
     }
+}
+
 }

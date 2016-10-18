@@ -1,5 +1,5 @@
 
-// @import "bourbon/bourbon.scss";
+@import "bourbon/bourbon.scss";
 @import "../../font-awesome-4.6.3/scss/font-awesome.scss";
 @import "partials/meyer-reset.scss";
 // @import "partials/normalize.scss";
@@ -9,3 +9,7 @@
 @import "partials/nav.scss";
 @import "partials/aside.scss";
 @import "partials/templates.scss";
+
+body {
+  background-image: url(../../images/cork_1.png);
+}

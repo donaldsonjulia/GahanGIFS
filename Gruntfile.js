@@ -4,7 +4,12 @@ module.exports = function(grunt) {
     sass: {                              // Task
        dist: {                            // Target
          options: {                       // Target options
-           style: 'compressed'
+           style: 'compressed',
+           loadPath: [
+                      'node_modules/bourbon/app/assets/stylesheets',
+                      'node_modules/bourbon-neat/app/assets/stylesheets',
+
+                  ]
          },
          files: {                         // Dictionary of files
            'lib/styles/main.min.css': 'src/styles/main.scss',       // 'destination': 'source'
@@ -16,9 +21,10 @@ module.exports = function(grunt) {
          preserveComments: false
        },
        my_target: {
-         files: {
-           'lib/js/main.min.js': ['lib/js/main.js']
-         }
+               files: {
+                   'lib/js/main.min.js': ['lib/js/main.js'],
+                   'lib/js/vendor.min.js': ['lib/js/vendor.js']
+               }
        }
      },
      concat: {
@@ -26,10 +32,15 @@ module.exports = function(grunt) {
          separator: ';'
        },
        dist: {
-         src: ['src/js/*.js'],
-         dest: 'lib/js/main.js'
-       }
+             files: {
+               'lib/js/main.js': ['src/js/*.js'],
+               'lib/js/vendor.js': ['src/js/vendor/*.js']
+             }
+           }
      },
+     jshint: {
+        all: ['Gruntfile.js', 'src/*.js', 'test/*.js']
+      },
      imagemin: {
        dynamic: {
          options: {
@@ -50,7 +61,7 @@ module.exports = function(grunt) {
        },
        javascript: {
          files: ['src/js/**/*'],
-         tasks: ['concat', 'uglify']
+         tasks: ['concat', 'uglify', 'jshint']
        },
        img: {
          files: ['images/**/*'],
@@ -65,5 +76,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.registerTask('default', ['sass', 'watch', 'imagemin', 'concat', 'uglify']);
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.registerTask('default', ['sass', 'watch', 'imagemin', 'jshint', 'concat', 'uglify']);
 };
