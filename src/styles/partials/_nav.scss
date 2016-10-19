@@ -1,26 +1,84 @@
 
 
 
+section.navigation {
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
 
 
-nav {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    z-index: 2;
+  border-radius: 0px 0px 30px 30px;
+  background-color: $pale-aqua;
 
-    font-family: sans-serif, FontAwesome;
+  text-align: center;
+  font-family: sans-serif, FontAwesome;
+
+
+}
+
 
 div.navMenu {
-
-background-color: $pale-aqua;
-  text-align: center;
-      div.navDiv {
-        display: none;
-      }
-  }
-
+  position: relative;
   div.navIcon {
-    background-color: $pale-aqua;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    float: left;
+    padding-left: 20px;
   }
+
+  div.pull-down-options {
+    display: none;
+  }
+}
+
+
+div.search-form {
+    position: relative;
+
+    form {
+      float: right;
+      padding-right: 20px;
+
+    input {
+      border-radius: 5px;
+      outline: none;
+      margin-right: 5px;
+      padding: 8px;
+      // width: 60%;
+      min-width: 200px;
+      border: 1px solid $pale-aqua;
+        &:hover {
+          border-color: #ccc;
+         }
+      }
+
+      button.search-button {
+        outline: none;
+        width: 100px;
+        // height: 40px;
+        margin: 5px;
+        // padding: 10px;
+        border-radius: 20px;
+        color: white;
+        font-size: 12px;
+        letter-spacing: 1px;
+        background-color: $pale-aqua;
+        border: 2px solid white;
+          &:hover {
+            color: $pale-aqua;
+            background: white;
+            border: 2px solid $pale-aqua;
+          }
+          &:active {
+            position: relative;
+            top: 1px;
+            letter-spacing: 2px;
+          }
+      }
+ }
 }
