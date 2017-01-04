@@ -1,4 +1,12 @@
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("/images/cork_1.png");
+}
+
 
 .flex-container {
   display: flex;
@@ -23,21 +31,23 @@
   background: $base-background;
   transition: ease;
 
-  img {
+  .searched-image {
     border-radius: 8px 40px 8px 8px;
     margin: 4px;
   }
 
-    a {
-      font-size: 12px;
-      position: absolute;
-      right: 5px;
-      top: 2.5px;
-      color: #fff;
+  a {
+    font-size: 12px;
+    position: absolute;
+    right: 5px;
+    top: 2.5px;
+    color: #fff;
 
-      &:hover {
-        color: $action;
-        cursor: pointer;
-      }
+    &:hover {
+      color: $action;
+      cursor: pointer;
     }
+
+}
+
 }

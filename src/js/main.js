@@ -23,7 +23,7 @@ function searchGIF(queryString, alreadySeen) {
     var query = encodeURI(queryString);
 
 
-    var searchURL = 'http://api.giphy.com/v1/gifs/search?q=' + query + '&limit=' + resultsLimit + '&offset=' + alreadySeen + '&api_key=dc6zaTOxFJmzC';
+    var searchURL = 'https://api.giphy.com/v1/gifs/search?q=' + query + '&limit=' + resultsLimit + '&offset=' + alreadySeen + '&api_key=dc6zaTOxFJmzC';
 
     var searchAjax = $.ajax({
         url: searchURL,
@@ -169,7 +169,7 @@ $('.navigation').on('submit', '.search-form', function(event) {
     createPage('#gifContentPage');
     gifContentPageCreated = true;
   }
-    resultsLimit = 6;
+    resultsLimit = 8;
     searchGIF(searchString, alreadySeen);
 
     alreadySeen += resultsLimit;
