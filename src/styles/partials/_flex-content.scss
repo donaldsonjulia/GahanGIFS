@@ -13,8 +13,6 @@
   align-content: center;
   justify-content: flex-end;
   align-items: center;
-  // flex-direction: row;
-  // flex-wrap: wrap;
 }
 
 .flex-item {
@@ -22,7 +20,7 @@
   display: flex;
   border-radius: 10px;
   margin: 5px;
-  background: $pale-aqua;
+  background: $base-background;
   transition: ease;
 
   img {
@@ -35,10 +33,11 @@
       position: absolute;
       right: 5px;
       top: 2.5px;
-      color: white;
+      color: #fff;
 
       &:hover {
-        color: black;
+        color: $action;
+        cursor: pointer;
       }
     }
 }

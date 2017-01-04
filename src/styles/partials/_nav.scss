@@ -1,87 +1,71 @@
-
-
-
-section.navigation {
-
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-
-
-  border-radius: 0px 0px 30px 30px;
-  background-color: $pale-aqua;
-
-  text-align: center;
-  font-family: sans-serif, FontAwesome;
-
-
+.navigation {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $base-background;
 }
 
+.search-form {
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
 
-div.navMenu {
-  position: relative;
-  div.navIcon {
-    a {
-      color: white;
-      text-decoration: none;
+.search-field {
+    width: 100%;
+    font-family: inherit;
+    font-size: 20px;
+    color: $action;
+    outline: none;
+    padding: 30px 5px 2px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $action;
+    text-align: center;
+
+    // &:hover {
+    //     border-bottom: 2px solid $action;
+    // }
+
+    @media screen and (min-width: 500px) {
+        font-size: 24px;
+    }
+    @media screen and (min-width: 750px) {
+        font-size: 26px;
+    }
+}
+
+.search-button {
+    position: absolute;
+    bottom: 0;
+    right: -16px;
+    font-family: inherit;
+    font-size: 18px;
+    transform-origin: top;
+    transform: translateY(22px);
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #000;
+
+    &:hover {
+        color: $action;
+        cursor: pointer;
     }
 
-    float: left;
-    padding-left: 20px;
-  }
-
-  div.pull-down-options {
-    display: none;
-        div {
-
+    &:active {
+        color: $action;
+        transform: translateY(23px);
+        @media screen and (min-width: 800px) {
+            transform: translateY(27px);
         }
-  }
-}
+    }
 
-
-div.search-form {
-    position: relative;
-
-    form {
-      float: right;
-      padding-right: 20px;
-
-    input {
-      border-radius: 5px;
-      outline: none;
-      margin-right: 5px;
-      padding: 8px;
-      // width: 60%;
-      min-width: 200px;
-      border: 1px solid $pale-aqua;
-        &:hover {
-          border-color: #ccc;
-         }
-      }
-
-      button.search-button {
-        outline: none;
-        width: 100px;
-        // height: 40px;
-        margin: 5px;
-        // padding: 10px;
-        border-radius: 20px;
-        color: white;
-        font-size: 12px;
-        letter-spacing: 1px;
-        background-color: $pale-aqua;
-        border: 2px solid white;
-          &:hover {
-            color: $pale-aqua;
-            background: white;
-            border: 2px solid $pale-aqua;
-          }
-          &:active {
-            position: relative;
-            top: 1px;
-            letter-spacing: 2px;
-          }
-      }
- }
+    @media screen and (min-width: 800px) {
+        font-size: 22px;
+        transform: translateY(26px);
+    }
 }

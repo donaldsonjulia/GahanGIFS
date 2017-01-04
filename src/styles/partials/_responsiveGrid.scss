@@ -3,11 +3,9 @@
   box-sizing: border-box;
 }
 
-main {
-  background-image: url(../images/cork_1.png);
+body {
+  background-image: url(/images/cork_1.png);
 }
-
-
 
 /* For mobile phones: */
 [class*="col-"] {
