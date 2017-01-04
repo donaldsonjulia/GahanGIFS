@@ -42,7 +42,7 @@ main {
     align-content: center;
 }
 
-.loading {
+.loading, .error-container {
     position: absolute;
     top: 0;
     width: 100%;
@@ -55,6 +55,13 @@ main {
 .loading-icon {
     color: $action;
 }
+
+.error-title {
+  text-align: center;
+  font-size: 22px;
+  font-family: inherit;
+}
+
 .hidden {
     display: none;
 }
