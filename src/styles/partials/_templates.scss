@@ -30,13 +30,10 @@ main {
 }
 
 .landing-container {
-  // display: flex;
-  // flex-direction: column;
+  margin-top: 30px;
   align-items: center;
-  flex-wrap: nowrap;
   justify-content: center;
 }
-
 
 
 .landing-title {
@@ -50,7 +47,10 @@ main {
 }
 
 .landing-item {
-  width: calc(94%/3);
+  width: calc(94%/2);
+    @media screen and (min-width: 500px) {
+      width: calc(94%/3);
+    }
   height: auto;
   position: relative;
   display: flex;
