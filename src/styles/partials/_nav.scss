@@ -4,12 +4,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $base-background;
 }
 
 .search-form {
     position: relative;
     width: 80%;
+    max-width: 800px;
     display: flex;
     justify-content: center;
 }
@@ -23,9 +23,8 @@
     padding: 30px 5px 2px;
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid $action;
+    border-bottom: 2px solid $base-background;
     text-align: center;
-
     @media screen and (min-width: 500px) {
         font-size: 24px;
     }
@@ -40,6 +39,10 @@
     right: -16px;
     font-family: inherit;
     font-size: 18px;
+    @media screen and (min-width: 800px) {
+        font-size: 20px;
+        transform: translateY(24px);
+    }
     transform-origin: top;
     transform: translateY(22px);
     outline: none;
@@ -58,10 +61,5 @@
         @media screen and (min-width: 800px) {
             transform: translateY(27px);
         }
-    }
-
-    @media screen and (min-width: 800px) {
-        font-size: 22px;
-        transform: translateY(26px);
     }
 }

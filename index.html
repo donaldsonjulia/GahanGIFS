@@ -3,14 +3,13 @@
 <html lang='en'>
 
     <head>
-        <title>gif collage</title>
+        <title>GIFSearch</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="lib/styles/main.min.css">
     </head>
 
     <body>
 
-        <!--- ** NAVIGATION BAR ** ------>
         <div class="navigation">
                 <form class="search-form" autocomplete="off">
                     <input class="search-field" type="text" name="search-terms" placeholder="">
@@ -18,23 +17,20 @@
                 </form>
         </div>
 
-        <!--- ** MAIN CONTENT ** ------>
         <main></main>
 
         <div id="loading-container" class="loading hidden">
           <i id="load-icon" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw loading-icon"></i>
         </div>
 
-        <!--- ** HANDLEBARS TEMPLATE SCRIPTS BELOW HERE ** ------>
+
         <script id="gifContentPage" type="text/x-handlebars-template">
             <div class="content flex-container">
             </div>
         </script>
+
         <script id="gif" type="text/x-handlebars-template">
-            <div class="gif-container flex-item">
-                <!-- <a class="delete_button">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </a> -->
+            <div class="gif-container searched-item">
                   <a class="delete_button">&#x2715;</a>
                 <img class="searched-image" src="{{gif_url}}">
             </div>
@@ -50,24 +46,23 @@
         <script id="landing" type="text/x-handlebars-template">
             <div class="flex-container landing-container">
                 <h1 class="landing-title">search images to create your own GIF collage</h1>
-                <div class="gif-container flex-item landing-item">
+                <div class="gif-container landing-item">
                     <a class="delete_button">&#x2715;</a>
                     <img class="landing-image" src="./images/gahan.gif">
                 </div>
-                <div class="gif-container flex-item landing-item">
+                <div class="gif-container landing-item">
                     <a class="delete_button">&#x2715;</a>
                     <img class="landing-image" src="./images/beyonce.gif">
                 </div>
-                <div class="gif-container flex-item landing-item">
+                <div class="gif-container landing-item">
                     <a class="delete_button">&#x2715;</a>
                     <img class="landing-image" src="./images/doom.gif">
                 </div>
             </div>
         </script>
 
-        <!--- ** JAVASCRIPT BELOW HERE ** ------>
-        <script src="lib/js/vendor.js"></script>
-        <script src="lib/js/main.js"></script>
+        <script src="lib/js/vendor.min.js"></script>
+        <script src="lib/js/main.min.js"></script>
 
     </body>
 

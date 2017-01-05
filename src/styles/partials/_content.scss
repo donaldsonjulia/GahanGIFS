@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    font-family: 'Raleway', sans-serif;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.button {
+    outline: none;
+    margin: 25px 15px 10px;
+    color: #000;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    border: none;
+
+    &:hover {
+        color: $action;
+        cursor: pointer;
+    }
+
+    &:active {
+        color: $action;
+        position: relative;
+        top: 1px;
+    }
+    @media screen and (min-width: 500px) {
+        font-size: 18px;
+    }
+}
+
+.landing-container {
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-title {
+    width: 100%;
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.landing-item,
+.searched-item {
+    width: calc(96%/2);
+    @media screen and (min-width: 500px) {
+        width: calc(94%/3);
+    }
+    @media screen and (min-width: 700px) {
+        width: calc(92%/4);
+    }
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    border: 4px solid $base-background;
+    margin: 1%;
+    background: $base-background;
+    transition: ease;
+
+    .landing-image,
+    .searched-image {
+        width: 100%;
+        height: 100%;
+        max-height: 150px;
+        border-radius: 8px 40px 8px 8px;
+    }
+
+    a {
+        font-size: 12px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: #000;
+
+        &:hover {
+            color: $action;
+            cursor: pointer;
+        }
+    }
+}
+
+.more-button-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.error-container,
+.loading {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-icon {
+    color: $action;
+}
+
+.error-title {
+    text-align: center;
+    font-size: 22px;
+    font-family: inherit;
+}
+
+.hidden {
+    display: none;
+}
